@@ -18,7 +18,7 @@ class RunCounter extends ConsumerWidget {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
             color: Theme.of(context).colorScheme.secondary,
           ),
           child: Row(
@@ -26,7 +26,7 @@ class RunCounter extends ConsumerWidget {
               SizedBox(
                 width: 30,
                 child: FloatingActionButton(
-                  onPressed: state.runCount > 0
+                  onPressed: state.runCount > 1
                       ? () {
                           editorBloc.add(EditorEvent.runCountChanged(
                               runCount: state.runCount - 1));

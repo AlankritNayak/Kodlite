@@ -19,6 +19,7 @@ class EditorBloc extends Bloc<EditorEvent, EditorState> {
   Future<void> _onEditorEvent(EditorEvent event, emit) async {
     await event.map(
       submitted: (submitted) async {
+        if (state.currentContents.trim().isEmpty) return;
         final fileSaveSuccessOrFailure = await _executionRepository
             .saveContentsToFile(state.currentContents);
         fileSaveSuccessOrFailure.fold((l) => null, (filePath) {
