@@ -50,6 +50,8 @@ https://drive.google.com/file/d/1hnkQYwS13A_UH3t568WeZulKk2Hi5abu/view?usp=shari
 - **Custom Compiler Path:** User can specify the path to the kotlinc compiler, they want to use on their machine. Checks if the compiler is available during the start, allows script run option only if compiler is available.
 - **Local Persistance:** Only asks for compiler path once, and saves it for future runs. Also allows changing compiler path anytime.
 
+
+## Screenshots 
 <details>
 <summary>Screenshots</summary>
 <br>
