@@ -8,7 +8,6 @@
 <div align="center">
   kodlite
   <br />
-  <a href="#about"><strong>Explore the screenshots »</strong></a>
  
 
 </div>
@@ -26,7 +25,7 @@
 
 ---
 **MacOS App Download Link:** 
-https://drive.google.com/file/d/1saed8iunWMh0TI2UrTIpwAihu4YdrBZW/view?usp=sharing
+https://drive.google.com/file/d/1hnkQYwS13A_UH3t568WeZulKk2Hi5abu/view?usp=sharing
 
 ## About
 
@@ -81,19 +80,20 @@ https://drive.google.com/file/d/1saed8iunWMh0TI2UrTIpwAihu4YdrBZW/view?usp=shari
 ### Prerequisites
 
 > **kotlinc**
-> You must download the [kotlinc](https://kotlinlang.org/docs/command-line.html#manual-install) command line compiler. It will be needed to run the kotlin scripts.
-> 
+> - You must download the [kotlinc](https://kotlinlang.org/docs/command-line.html#manual-install) command line compiler. It will be needed to run the kotlin scripts.
+>  - Due to time constraints I have currently only created a **MacOS** version of this application. Hence in order to [download the application from drive link](https://drive.google.com/file/d/1hnkQYwS13A_UH3t568WeZulKk2Hi5abu/view?usp=sharing), you will need a computer running MacOS.
 
 ### Installation
 
 >  Please download the **MacOS** application from the below drive link: 
-> https://drive.google.com/file/d/1saed8iunWMh0TI2UrTIpwAihu4YdrBZW/view?usp=sharing
+> https://drive.google.com/file/d/1hnkQYwS13A_UH3t568WeZulKk2Hi5abu/view?usp=sharing
 >
->> Currently I was only able to generate the MacOs version due to time constraints. However Since the app is built using Flutter, its multiplatform, and a Windows and Linux version can be easily generated.
+>- Currently I was only able to generate the MacOs version due to time constraints.
+> - However Since the app is built using Flutter, its multiplatform, and a Windows and Linux version can be easily generated. If you are familiar with Flutter, and have it installed, you can easily the run same app in any platform (supported by flutter). By cloning the [GitHub Repository](https://github.com/AlankritNayak/Kodlite).
 
 ## Usage
 
-> - Once downloading the zip file from the [drive link](https://drive.google.com/file/d/1saed8iunWMh0TI2UrTIpwAihu4YdrBZW/view?usp=sharing). Please unzip the file, and you will find the **"Kodlite"** MacOS App. 
+> - Once downloading the zip file from the [drive link](https://drive.google.com/file/d/1hnkQYwS13A_UH3t568WeZulKk2Hi5abu/view?usp=sharing). Please unzip the file, and you will find the **"Kodlite"** MacOS App. 
 > - When you launch the app for the time, it will prompt you to provide permission to access files on your computer. **Please allow this permission, because it is needed to save Kotlin scripts and pass them to the compiler.**
 > - On startup, the app will check if you have already provided a path to the kotlinc compiler. If the kotlinc compiler is not found (which will be the case in the first run), you must provide the path to compiler using the **"Update Compiler Path" button**, at the bottom of the Editor.
 > - Once the kotlinc compiler is found, you can start editing and running your kotlin script.
@@ -102,38 +102,25 @@ https://drive.google.com/file/d/1saed8iunWMh0TI2UrTIpwAihu4YdrBZW/view?usp=shari
 >
 
 ## Architecture
-> This App uses a layered architecture patter. Here is a brief explanation of each layer.
-> - Presentation Layer:
->    - Contains Widgets, takes user input.
->    - interacts with application layer by sending Raw data. (ex: Strings etc)
->     
-> - Application Layer:
->      - Widget Communicate with Immutable Blocs, by sending events
->   - Blocs react to these events and outputs states. 
->   - Presentation Layers receives this outputted state and behaves accordingly.
- >
-> - Domain Layer:
->   - The Application Layer communicates with the 
->     Infrastructure layer by mostly sending along Entities 
->   - Domain Layer contains entities. Entities are pure, in a 
->   sense that they don’t contain any flutter specific code, 
->   but only pure dart code.
->   - Failures: These will be returned from repository methods 
->     together with Entities.
->   - Failures and Entities will be put into an "Either" type
->     when they travel from Repositories to Application layer.
-> - Infrastructure Layer
->   - Contains **Repositories**. Repositories are responsible for providing data and communicating with external services. 
->   - However in our small application the
->  **kotlinc compiler is the external service**. Hence the repository communicates with it to run scripts and receive the outputs. 
-> 
-
-
-
-
-
-
-
+This App uses a layered architecture patter. Here is a brief explanation of each layer.
+- Presentation Layer:
+	- Contains Widgets, takes user input and interacts with application layer by sending Raw data. (ex: Strings etc)
+ - Application Layer:
+	 - Contains the **Business Logic Components** (Blocs), to hold business logic and manage state of the UI.
+	- Widget Communicate with Immutable Blocs, by sending events
+	- Blocs react to these events and outputs states.
+	 - Presentation Layers receives this outputted state and behaves accordingly.
+ - Domain Layer:
+	 - The Application Layer communicates with the Infrastructure layer by mostly sending along Entities
+	- Domain Layer contains entities. Entities are pure, in a sense that they don’t contain any flutter specific code, but only pure dart code.
+	- Domain Layer also contains "Failure" classes. Objects of these classes will be returned from repository methods together with Entities.	As the name suggests Failures are returned when something bad happens in the repositories. Failures a usually implemented as a "Union Type", to differentiate between different failure cases.
+	- ex: Failure.storage, Failure.compiler etc.
+	-  Failures and Entities will be put into an "Either" type when they travel from Repositories to Application layer.
+	-  As the name suggests an "Either" type is useful, to allow the business logic component to react in two different ways, during success of failure.
+- Infrastructure Layer
+	 - Contains **Repositories**. Repositories are responsible for providing data and communicating with external services.
+	 - However in our small application the **kotlinc compiler is the external service**. Hence the repository communicates with it to run scripts and receive the outputs.
+  
 
 ## Authors & contributors
 
