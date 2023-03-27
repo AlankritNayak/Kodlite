@@ -109,7 +109,7 @@ This App uses a layered architecture patter. Here is a brief explanation of each
 	- Contains Widgets, takes user input and interacts with application layer by sending Raw data. (ex: Strings etc)
  - Application Layer:
 	 - Contains the **Business Logic Components** (Blocs), to hold business logic and manage state of the UI.
-	- Widget Communicate with Immutable Blocs, by sending events
+	- Widget Communicate with Blocs, by sending events
 	- Blocs react to these events and outputs states.
 	 - Presentation Layers receives this outputted state and behaves accordingly.
  - Domain Layer:
