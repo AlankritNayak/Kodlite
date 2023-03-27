@@ -6,11 +6,22 @@ import 'package:kodlite/home/presentation/widgets/editor_pane.dart';
 import 'package:kodlite/home/presentation/widgets/output_pane.dart';
 import 'package:kodlite/home/shared/providers.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  void initState() {
+    ref.read(editorBlocProvider).add(const EditorEvent.initialized());
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return BlocBuilder<EditorBloc, EditorState>(
       bloc: ref.read(editorBlocProvider),

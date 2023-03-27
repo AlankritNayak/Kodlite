@@ -3,7 +3,7 @@ description: A kotlin code editor project.
 
 publish_to: 'none'
 
-version: 1.0.0+2
+version: 1.0.0+3
 
 environment:
   sdk: '>=2.19.5 <3.0.0'
@@ -23,6 +23,7 @@ dependencies:
   riverpod: ^2.3.2
   flutter_riverpod: ^2.3.2
   process_run: ^0.12.5+2
+  shared_preferences: ^2.0.20
 
 dev_dependencies:
   flutter_test:

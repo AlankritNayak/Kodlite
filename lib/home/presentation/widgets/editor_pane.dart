@@ -4,8 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kodlite/home/application/bloc/editor_bloc.dart';
 import 'package:kodlite/home/application/bloc/output_bloc.dart';
 import 'package:kodlite/home/presentation/widgets/custom_text_editor.dart';
-import 'package:kodlite/home/presentation/widgets/run_counter.dart';
 import 'package:kodlite/home/shared/providers.dart';
+
+import 'editor_bottom_row.dart';
 
 class EditorPane extends ConsumerWidget {
   const EditorPane({
@@ -26,27 +27,7 @@ class EditorPane extends ConsumerWidget {
         builder: (context, state) {
           return AbsorbPointer(
             absorbing: state.status == Status.running,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const SizedBox(height: 45, child: RunCounter()),
-                const SizedBox(
-                  width: 10,
-                ),
-                SizedBox(
-                  height: 45,
-                  child: FloatingActionButton(
-                    tooltip: "RUN",
-                    onPressed: () {
-                      ref
-                          .read(editorBlocProvider)
-                          .add(const EditorEvent.submitted());
-                    },
-                    child: const Icon(Icons.play_arrow),
-                  ),
-                ),
-              ],
-            ),
+            child:  EditorBottomRow(),
           );
         },
       ),

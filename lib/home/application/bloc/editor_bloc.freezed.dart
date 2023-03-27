@@ -18,6 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$EditorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
     required TResult Function(String contents) editing,
     required TResult Function() submitted,
     required TResult Function(int runCount) runCountChanged,
@@ -26,6 +29,9 @@ mixin _$EditorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
     TResult? Function(String contents)? editing,
     TResult? Function()? submitted,
     TResult? Function(int runCount)? runCountChanged,
@@ -34,6 +40,9 @@ mixin _$EditorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
     TResult Function(String contents)? editing,
     TResult Function()? submitted,
     TResult Function(int runCount)? runCountChanged,
@@ -43,6 +52,11 @@ mixin _$EditorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
     required TResult Function(_Editing value) editing,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_RunCountChanged value) runCountChanged,
@@ -51,6 +65,10 @@ mixin _$EditorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult? Function(_Editing value)? editing,
     TResult? Function(_Submitted value)? submitted,
     TResult? Function(_RunCountChanged value)? runCountChanged,
@@ -59,6 +77,10 @@ mixin _$EditorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult Function(_Editing value)? editing,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_RunCountChanged value)? runCountChanged,
@@ -84,6 +106,482 @@ class _$EditorEventCopyWithImpl<$Res, $Val extends EditorEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$EditorEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Initialized implements _Initialized {
+  const _$_Initialized();
+
+  @override
+  String toString() {
+    return 'EditorEvent.initialized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initialized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
+    required TResult Function(String contents) editing,
+    required TResult Function() submitted,
+    required TResult Function(int runCount) runCountChanged,
+    required TResult Function(String message) errorNavigated,
+  }) {
+    return initialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
+    TResult? Function(String contents)? editing,
+    TResult? Function()? submitted,
+    TResult? Function(int runCount)? runCountChanged,
+    TResult? Function(String message)? errorNavigated,
+  }) {
+    return initialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
+    TResult Function(String contents)? editing,
+    TResult Function()? submitted,
+    TResult Function(int runCount)? runCountChanged,
+    TResult Function(String message)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
+    required TResult Function(_Editing value) editing,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_RunCountChanged value) runCountChanged,
+    required TResult Function(_ErrorNavigated value) errorNavigated,
+  }) {
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult? Function(_Editing value)? editing,
+    TResult? Function(_Submitted value)? submitted,
+    TResult? Function(_RunCountChanged value)? runCountChanged,
+    TResult? Function(_ErrorNavigated value)? errorNavigated,
+  }) {
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult Function(_Editing value)? editing,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_RunCountChanged value)? runCountChanged,
+    TResult Function(_ErrorNavigated value)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements EditorEvent {
+  const factory _Initialized() = _$_Initialized;
+}
+
+/// @nodoc
+abstract class _$$_CompilerAvailabilityCheckedCopyWith<$Res> {
+  factory _$$_CompilerAvailabilityCheckedCopyWith(
+          _$_CompilerAvailabilityChecked value,
+          $Res Function(_$_CompilerAvailabilityChecked) then) =
+      __$$_CompilerAvailabilityCheckedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String path});
+}
+
+/// @nodoc
+class __$$_CompilerAvailabilityCheckedCopyWithImpl<$Res>
+    extends _$EditorEventCopyWithImpl<$Res, _$_CompilerAvailabilityChecked>
+    implements _$$_CompilerAvailabilityCheckedCopyWith<$Res> {
+  __$$_CompilerAvailabilityCheckedCopyWithImpl(
+      _$_CompilerAvailabilityChecked _value,
+      $Res Function(_$_CompilerAvailabilityChecked) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+  }) {
+    return _then(_$_CompilerAvailabilityChecked(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CompilerAvailabilityChecked implements _CompilerAvailabilityChecked {
+  const _$_CompilerAvailabilityChecked({required this.path});
+
+  @override
+  final String path;
+
+  @override
+  String toString() {
+    return 'EditorEvent.compilerAvailabilityChecked(path: $path)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CompilerAvailabilityChecked &&
+            (identical(other.path, path) || other.path == path));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CompilerAvailabilityCheckedCopyWith<_$_CompilerAvailabilityChecked>
+      get copyWith => __$$_CompilerAvailabilityCheckedCopyWithImpl<
+          _$_CompilerAvailabilityChecked>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
+    required TResult Function(String contents) editing,
+    required TResult Function() submitted,
+    required TResult Function(int runCount) runCountChanged,
+    required TResult Function(String message) errorNavigated,
+  }) {
+    return compilerAvailabilityChecked(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
+    TResult? Function(String contents)? editing,
+    TResult? Function()? submitted,
+    TResult? Function(int runCount)? runCountChanged,
+    TResult? Function(String message)? errorNavigated,
+  }) {
+    return compilerAvailabilityChecked?.call(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
+    TResult Function(String contents)? editing,
+    TResult Function()? submitted,
+    TResult Function(int runCount)? runCountChanged,
+    TResult Function(String message)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (compilerAvailabilityChecked != null) {
+      return compilerAvailabilityChecked(path);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
+    required TResult Function(_Editing value) editing,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_RunCountChanged value) runCountChanged,
+    required TResult Function(_ErrorNavigated value) errorNavigated,
+  }) {
+    return compilerAvailabilityChecked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult? Function(_Editing value)? editing,
+    TResult? Function(_Submitted value)? submitted,
+    TResult? Function(_RunCountChanged value)? runCountChanged,
+    TResult? Function(_ErrorNavigated value)? errorNavigated,
+  }) {
+    return compilerAvailabilityChecked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult Function(_Editing value)? editing,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_RunCountChanged value)? runCountChanged,
+    TResult Function(_ErrorNavigated value)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (compilerAvailabilityChecked != null) {
+      return compilerAvailabilityChecked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompilerAvailabilityChecked implements EditorEvent {
+  const factory _CompilerAvailabilityChecked({required final String path}) =
+      _$_CompilerAvailabilityChecked;
+
+  String get path;
+  @JsonKey(ignore: true)
+  _$$_CompilerAvailabilityCheckedCopyWith<_$_CompilerAvailabilityChecked>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CompilerPathSubmittedCopyWith<$Res> {
+  factory _$$_CompilerPathSubmittedCopyWith(_$_CompilerPathSubmitted value,
+          $Res Function(_$_CompilerPathSubmitted) then) =
+      __$$_CompilerPathSubmittedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String path});
+}
+
+/// @nodoc
+class __$$_CompilerPathSubmittedCopyWithImpl<$Res>
+    extends _$EditorEventCopyWithImpl<$Res, _$_CompilerPathSubmitted>
+    implements _$$_CompilerPathSubmittedCopyWith<$Res> {
+  __$$_CompilerPathSubmittedCopyWithImpl(_$_CompilerPathSubmitted _value,
+      $Res Function(_$_CompilerPathSubmitted) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+  }) {
+    return _then(_$_CompilerPathSubmitted(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CompilerPathSubmitted implements _CompilerPathSubmitted {
+  const _$_CompilerPathSubmitted({required this.path});
+
+  @override
+  final String path;
+
+  @override
+  String toString() {
+    return 'EditorEvent.compilerPathSubmitted(path: $path)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CompilerPathSubmitted &&
+            (identical(other.path, path) || other.path == path));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CompilerPathSubmittedCopyWith<_$_CompilerPathSubmitted> get copyWith =>
+      __$$_CompilerPathSubmittedCopyWithImpl<_$_CompilerPathSubmitted>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
+    required TResult Function(String contents) editing,
+    required TResult Function() submitted,
+    required TResult Function(int runCount) runCountChanged,
+    required TResult Function(String message) errorNavigated,
+  }) {
+    return compilerPathSubmitted(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
+    TResult? Function(String contents)? editing,
+    TResult? Function()? submitted,
+    TResult? Function(int runCount)? runCountChanged,
+    TResult? Function(String message)? errorNavigated,
+  }) {
+    return compilerPathSubmitted?.call(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
+    TResult Function(String contents)? editing,
+    TResult Function()? submitted,
+    TResult Function(int runCount)? runCountChanged,
+    TResult Function(String message)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (compilerPathSubmitted != null) {
+      return compilerPathSubmitted(path);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
+    required TResult Function(_Editing value) editing,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_RunCountChanged value) runCountChanged,
+    required TResult Function(_ErrorNavigated value) errorNavigated,
+  }) {
+    return compilerPathSubmitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult? Function(_Editing value)? editing,
+    TResult? Function(_Submitted value)? submitted,
+    TResult? Function(_RunCountChanged value)? runCountChanged,
+    TResult? Function(_ErrorNavigated value)? errorNavigated,
+  }) {
+    return compilerPathSubmitted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
+    TResult Function(_Editing value)? editing,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_RunCountChanged value)? runCountChanged,
+    TResult Function(_ErrorNavigated value)? errorNavigated,
+    required TResult orElse(),
+  }) {
+    if (compilerPathSubmitted != null) {
+      return compilerPathSubmitted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompilerPathSubmitted implements EditorEvent {
+  const factory _CompilerPathSubmitted({required final String path}) =
+      _$_CompilerPathSubmitted;
+
+  String get path;
+  @JsonKey(ignore: true)
+  _$$_CompilerPathSubmittedCopyWith<_$_CompilerPathSubmitted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -150,6 +648,9 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
     required TResult Function(String contents) editing,
     required TResult Function() submitted,
     required TResult Function(int runCount) runCountChanged,
@@ -161,6 +662,9 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
     TResult? Function(String contents)? editing,
     TResult? Function()? submitted,
     TResult? Function(int runCount)? runCountChanged,
@@ -172,6 +676,9 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
     TResult Function(String contents)? editing,
     TResult Function()? submitted,
     TResult Function(int runCount)? runCountChanged,
@@ -187,6 +694,11 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
     required TResult Function(_Editing value) editing,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_RunCountChanged value) runCountChanged,
@@ -198,6 +710,10 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult? Function(_Editing value)? editing,
     TResult? Function(_Submitted value)? submitted,
     TResult? Function(_RunCountChanged value)? runCountChanged,
@@ -209,6 +725,10 @@ class _$_Editing implements _Editing {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult Function(_Editing value)? editing,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_RunCountChanged value)? runCountChanged,
@@ -269,6 +789,9 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
     required TResult Function(String contents) editing,
     required TResult Function() submitted,
     required TResult Function(int runCount) runCountChanged,
@@ -280,6 +803,9 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
     TResult? Function(String contents)? editing,
     TResult? Function()? submitted,
     TResult? Function(int runCount)? runCountChanged,
@@ -291,6 +817,9 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
     TResult Function(String contents)? editing,
     TResult Function()? submitted,
     TResult Function(int runCount)? runCountChanged,
@@ -306,6 +835,11 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
     required TResult Function(_Editing value) editing,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_RunCountChanged value) runCountChanged,
@@ -317,6 +851,10 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult? Function(_Editing value)? editing,
     TResult? Function(_Submitted value)? submitted,
     TResult? Function(_RunCountChanged value)? runCountChanged,
@@ -328,6 +866,10 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult Function(_Editing value)? editing,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_RunCountChanged value)? runCountChanged,
@@ -410,6 +952,9 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
     required TResult Function(String contents) editing,
     required TResult Function() submitted,
     required TResult Function(int runCount) runCountChanged,
@@ -421,6 +966,9 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
     TResult? Function(String contents)? editing,
     TResult? Function()? submitted,
     TResult? Function(int runCount)? runCountChanged,
@@ -432,6 +980,9 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
     TResult Function(String contents)? editing,
     TResult Function()? submitted,
     TResult Function(int runCount)? runCountChanged,
@@ -447,6 +998,11 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
     required TResult Function(_Editing value) editing,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_RunCountChanged value) runCountChanged,
@@ -458,6 +1014,10 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult? Function(_Editing value)? editing,
     TResult? Function(_Submitted value)? submitted,
     TResult? Function(_RunCountChanged value)? runCountChanged,
@@ -469,6 +1029,10 @@ class _$_RunCountChanged implements _RunCountChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult Function(_Editing value)? editing,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_RunCountChanged value)? runCountChanged,
@@ -556,6 +1120,9 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String path) compilerAvailabilityChecked,
+    required TResult Function(String path) compilerPathSubmitted,
     required TResult Function(String contents) editing,
     required TResult Function() submitted,
     required TResult Function(int runCount) runCountChanged,
@@ -567,6 +1134,9 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialized,
+    TResult? Function(String path)? compilerAvailabilityChecked,
+    TResult? Function(String path)? compilerPathSubmitted,
     TResult? Function(String contents)? editing,
     TResult? Function()? submitted,
     TResult? Function(int runCount)? runCountChanged,
@@ -578,6 +1148,9 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String path)? compilerAvailabilityChecked,
+    TResult Function(String path)? compilerPathSubmitted,
     TResult Function(String contents)? editing,
     TResult Function()? submitted,
     TResult Function(int runCount)? runCountChanged,
@@ -593,6 +1166,11 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CompilerAvailabilityChecked value)
+        compilerAvailabilityChecked,
+    required TResult Function(_CompilerPathSubmitted value)
+        compilerPathSubmitted,
     required TResult Function(_Editing value) editing,
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_RunCountChanged value) runCountChanged,
@@ -604,6 +1182,10 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult? Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult? Function(_Editing value)? editing,
     TResult? Function(_Submitted value)? submitted,
     TResult? Function(_RunCountChanged value)? runCountChanged,
@@ -615,6 +1197,10 @@ class _$_ErrorNavigated implements _ErrorNavigated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CompilerAvailabilityChecked value)?
+        compilerAvailabilityChecked,
+    TResult Function(_CompilerPathSubmitted value)? compilerPathSubmitted,
     TResult Function(_Editing value)? editing,
     TResult Function(_Submitted value)? submitted,
     TResult Function(_RunCountChanged value)? runCountChanged,
@@ -640,6 +1226,13 @@ abstract class _ErrorNavigated implements EditorEvent {
 
 /// @nodoc
 mixin _$EditorState {
+  CompilerStatus get compilerStatus => throw _privateConstructorUsedError;
+  CompilerAvailabilityCheckStatus get compilerAvailabilityCheckStatus =>
+      throw _privateConstructorUsedError;
+  String get compilerAvailabilityCheckMessage =>
+      throw _privateConstructorUsedError;
+  String get compilerPath => throw _privateConstructorUsedError;
+  String get compilerVersion => throw _privateConstructorUsedError;
   String get currentContents => throw _privateConstructorUsedError;
   int get runCount => throw _privateConstructorUsedError;
 
@@ -659,7 +1252,12 @@ abstract class $EditorStateCopyWith<$Res> {
       _$EditorStateCopyWithImpl<$Res, EditorState>;
   @useResult
   $Res call(
-      {String currentContents,
+      {CompilerStatus compilerStatus,
+      CompilerAvailabilityCheckStatus compilerAvailabilityCheckStatus,
+      String compilerAvailabilityCheckMessage,
+      String compilerPath,
+      String compilerVersion,
+      String currentContents,
       int runCount,
       Tuple2<bool, int> navigateToError});
 }
@@ -677,11 +1275,36 @@ class _$EditorStateCopyWithImpl<$Res, $Val extends EditorState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? compilerStatus = null,
+    Object? compilerAvailabilityCheckStatus = null,
+    Object? compilerAvailabilityCheckMessage = null,
+    Object? compilerPath = null,
+    Object? compilerVersion = null,
     Object? currentContents = null,
     Object? runCount = null,
     Object? navigateToError = null,
   }) {
     return _then(_value.copyWith(
+      compilerStatus: null == compilerStatus
+          ? _value.compilerStatus
+          : compilerStatus // ignore: cast_nullable_to_non_nullable
+              as CompilerStatus,
+      compilerAvailabilityCheckStatus: null == compilerAvailabilityCheckStatus
+          ? _value.compilerAvailabilityCheckStatus
+          : compilerAvailabilityCheckStatus // ignore: cast_nullable_to_non_nullable
+              as CompilerAvailabilityCheckStatus,
+      compilerAvailabilityCheckMessage: null == compilerAvailabilityCheckMessage
+          ? _value.compilerAvailabilityCheckMessage
+          : compilerAvailabilityCheckMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      compilerPath: null == compilerPath
+          ? _value.compilerPath
+          : compilerPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      compilerVersion: null == compilerVersion
+          ? _value.compilerVersion
+          : compilerVersion // ignore: cast_nullable_to_non_nullable
+              as String,
       currentContents: null == currentContents
           ? _value.currentContents
           : currentContents // ignore: cast_nullable_to_non_nullable
@@ -707,7 +1330,12 @@ abstract class _$$_EditorStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String currentContents,
+      {CompilerStatus compilerStatus,
+      CompilerAvailabilityCheckStatus compilerAvailabilityCheckStatus,
+      String compilerAvailabilityCheckMessage,
+      String compilerPath,
+      String compilerVersion,
+      String currentContents,
       int runCount,
       Tuple2<bool, int> navigateToError});
 }
@@ -723,11 +1351,36 @@ class __$$_EditorStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? compilerStatus = null,
+    Object? compilerAvailabilityCheckStatus = null,
+    Object? compilerAvailabilityCheckMessage = null,
+    Object? compilerPath = null,
+    Object? compilerVersion = null,
     Object? currentContents = null,
     Object? runCount = null,
     Object? navigateToError = null,
   }) {
     return _then(_$_EditorState(
+      compilerStatus: null == compilerStatus
+          ? _value.compilerStatus
+          : compilerStatus // ignore: cast_nullable_to_non_nullable
+              as CompilerStatus,
+      compilerAvailabilityCheckStatus: null == compilerAvailabilityCheckStatus
+          ? _value.compilerAvailabilityCheckStatus
+          : compilerAvailabilityCheckStatus // ignore: cast_nullable_to_non_nullable
+              as CompilerAvailabilityCheckStatus,
+      compilerAvailabilityCheckMessage: null == compilerAvailabilityCheckMessage
+          ? _value.compilerAvailabilityCheckMessage
+          : compilerAvailabilityCheckMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      compilerPath: null == compilerPath
+          ? _value.compilerPath
+          : compilerPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      compilerVersion: null == compilerVersion
+          ? _value.compilerVersion
+          : compilerVersion // ignore: cast_nullable_to_non_nullable
+              as String,
       currentContents: null == currentContents
           ? _value.currentContents
           : currentContents // ignore: cast_nullable_to_non_nullable
@@ -748,11 +1401,32 @@ class __$$_EditorStateCopyWithImpl<$Res>
 
 class _$_EditorState extends _EditorState {
   const _$_EditorState(
-      {this.currentContents = '',
+      {this.compilerStatus = CompilerStatus.checking,
+      this.compilerAvailabilityCheckStatus =
+          CompilerAvailabilityCheckStatus.unknown,
+      this.compilerAvailabilityCheckMessage = '',
+      this.compilerPath = '',
+      this.compilerVersion = '',
+      this.currentContents = '',
       this.runCount = 1,
       this.navigateToError = const Tuple2(false, -1)})
       : super._();
 
+  @override
+  @JsonKey()
+  final CompilerStatus compilerStatus;
+  @override
+  @JsonKey()
+  final CompilerAvailabilityCheckStatus compilerAvailabilityCheckStatus;
+  @override
+  @JsonKey()
+  final String compilerAvailabilityCheckMessage;
+  @override
+  @JsonKey()
+  final String compilerPath;
+  @override
+  @JsonKey()
+  final String compilerVersion;
   @override
   @JsonKey()
   final String currentContents;
@@ -768,7 +1442,7 @@ class _$_EditorState extends _EditorState {
 
   @override
   String toString() {
-    return 'EditorState(currentContents: $currentContents, runCount: $runCount, navigateToError: $navigateToError)';
+    return 'EditorState(compilerStatus: $compilerStatus, compilerAvailabilityCheckStatus: $compilerAvailabilityCheckStatus, compilerAvailabilityCheckMessage: $compilerAvailabilityCheckMessage, compilerPath: $compilerPath, compilerVersion: $compilerVersion, currentContents: $currentContents, runCount: $runCount, navigateToError: $navigateToError)';
   }
 
   @override
@@ -776,6 +1450,20 @@ class _$_EditorState extends _EditorState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EditorState &&
+            (identical(other.compilerStatus, compilerStatus) ||
+                other.compilerStatus == compilerStatus) &&
+            (identical(other.compilerAvailabilityCheckStatus,
+                    compilerAvailabilityCheckStatus) ||
+                other.compilerAvailabilityCheckStatus ==
+                    compilerAvailabilityCheckStatus) &&
+            (identical(other.compilerAvailabilityCheckMessage,
+                    compilerAvailabilityCheckMessage) ||
+                other.compilerAvailabilityCheckMessage ==
+                    compilerAvailabilityCheckMessage) &&
+            (identical(other.compilerPath, compilerPath) ||
+                other.compilerPath == compilerPath) &&
+            (identical(other.compilerVersion, compilerVersion) ||
+                other.compilerVersion == compilerVersion) &&
             (identical(other.currentContents, currentContents) ||
                 other.currentContents == currentContents) &&
             (identical(other.runCount, runCount) ||
@@ -785,8 +1473,16 @@ class _$_EditorState extends _EditorState {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, currentContents, runCount, navigateToError);
+  int get hashCode => Object.hash(
+      runtimeType,
+      compilerStatus,
+      compilerAvailabilityCheckStatus,
+      compilerAvailabilityCheckMessage,
+      compilerPath,
+      compilerVersion,
+      currentContents,
+      runCount,
+      navigateToError);
 
   @JsonKey(ignore: true)
   @override
@@ -797,11 +1493,26 @@ class _$_EditorState extends _EditorState {
 
 abstract class _EditorState extends EditorState {
   const factory _EditorState(
-      {final String currentContents,
+      {final CompilerStatus compilerStatus,
+      final CompilerAvailabilityCheckStatus compilerAvailabilityCheckStatus,
+      final String compilerAvailabilityCheckMessage,
+      final String compilerPath,
+      final String compilerVersion,
+      final String currentContents,
       final int runCount,
       final Tuple2<bool, int> navigateToError}) = _$_EditorState;
   const _EditorState._() : super._();
 
+  @override
+  CompilerStatus get compilerStatus;
+  @override
+  CompilerAvailabilityCheckStatus get compilerAvailabilityCheckStatus;
+  @override
+  String get compilerAvailabilityCheckMessage;
+  @override
+  String get compilerPath;
+  @override
+  String get compilerVersion;
   @override
   String get currentContents;
   @override

@@ -1,9 +1,24 @@
 part of 'editor_bloc.dart';
 
+enum CompilerStatus { available, notAvailable, checking }
+
+enum CompilerAvailabilityCheckStatus {
+  available,
+  notAvailable,
+  checking,
+  unknown
+}
+
 @freezed
 class EditorState with _$EditorState {
   const EditorState._();
   const factory EditorState({
+    @Default(CompilerStatus.checking) CompilerStatus compilerStatus,
+    @Default(CompilerAvailabilityCheckStatus.unknown)
+        CompilerAvailabilityCheckStatus compilerAvailabilityCheckStatus,
+    @Default('') String compilerAvailabilityCheckMessage,
+    @Default('') String compilerPath,
+    @Default('') String compilerVersion,
     @Default('') String currentContents,
     @Default(1) int runCount,
 
